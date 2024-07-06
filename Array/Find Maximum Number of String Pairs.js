@@ -7,3 +7,22 @@ var maximumNumberOfStringPairs = function(words) {
     }
     return counter
 };
+
+// Another Solution 
+
+var maximumNumberOfStringPairs = function(words) {
+    let counter = 0 ;
+    const seen = new Set()
+
+    for(const word of words){
+     let reversed = word.split("").reverse("").join("")
+
+     if(seen.has(reversed)){
+       counter++
+     }
+     else{
+       seen.add(word)
+     }
+    }
+    return counter
+};
