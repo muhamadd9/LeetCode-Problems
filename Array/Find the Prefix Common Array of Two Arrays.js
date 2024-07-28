@@ -11,3 +11,24 @@ var findThePrefixCommonArray = function(A, B) {
     }
     return prefixCommonArray
 };
+
+
+// Another Solution 
+
+var findThePrefixCommonArray = function(A, B) {
+    let prefixCommonArray = [];
+    let setA = new Set();
+    let setB = new Set();
+    let commonCount = 0;
+
+    for (let i = 0; i < A.length; i++) {
+        setA.add(A[i]);
+        setB.add(B[i]);
+
+        if (setB.has(A[i])) commonCount++;
+        if (setA.has(B[i])) commonCount++;
+        prefixCommonArray.push(commonCount);
+    }
+    return prefixCommonArray;
+};
+console.log(findThePrefixCommonArray([1,3,2,4],[3,1,2,4]))
