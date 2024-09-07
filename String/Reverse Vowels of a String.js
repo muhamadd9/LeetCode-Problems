@@ -18,5 +18,6 @@ var reverseVowels = function(s) {
       newString += s[i]
     }
    }
+   
    return newString ;
 };
