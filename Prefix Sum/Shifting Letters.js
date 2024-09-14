@@ -17,3 +17,21 @@ var shiftingLetters = function(s, shifts) {
       }
       return result
 };
+
+
+// Shifts in reverse order 
+var shiftingLetters = function(s, shifts) {
+    for (let i = shifts.length - 2; i >= 0; i--) {
+        shifts[i] += shifts[i + 1];
+    }
+
+    let result = '';
+    
+    for (let i = 0; i < s.length; i++) {
+        let charCode = s.charCodeAt(i) - 97; 
+        let newCharCode = (charCode + shifts[i]) % 26; 
+        result += String.fromCharCode(newCharCode + 97); 
+    }
+
+    return result;
+};
